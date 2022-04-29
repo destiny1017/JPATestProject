@@ -26,14 +26,16 @@ public class JPATestMain {
             Book book1 = new Book("book1", 15000, "989955324832", "kdh", 233, Publisher.길벗);
             em.persist(book1);
 
-            OrderItem orderItem1 = new OrderItem(clothes1, 1);
-            em.persist(orderItem1);
-            OrderItem orderItem2 = new OrderItem(book1, 2);
-            em.persist(orderItem2);
             Order order = new Order(user);
+            OrderItem orderItem1 = new OrderItem(clothes1, 1);
+//            em.persist(orderItem1);
+            OrderItem orderItem2 = new OrderItem(book1, 2);
+//            em.persist(orderItem2);
             order.addOrderItems(orderItem1);
             order.addOrderItems(orderItem2);
             em.persist(order);
+            em.persist(orderItem1);
+            em.persist(orderItem2);
 
             em.flush();
 
