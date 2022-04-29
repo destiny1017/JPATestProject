@@ -1,7 +1,6 @@
 package jpaShop;
 
-import jpaShop.domain.Order;
-import jpaShop.domain.User;
+import jpaShop.domain.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,17 +15,27 @@ public class JPATestMain {
         EntityTransaction tx = em.getTransaction();
 
         try {
-            User user = new User();
+            tx.begin();
+            User user = new User("user1");
             em.persist(user);
-            user.setUserName("user1");
-            Order order = new Order();
-            order.setUser(user);
+
+            Size shirtsSize = new Size("SHIRTS", "80", "105", "70", "0", "0", "");
+            em.persist(shirtsSize);
+            Clothes clothes1 = new Clothes("shirts1", 22000, "top", "SHIRTS", shirtsSize, "white");
+            em.persist(clothes1);
+            Book book1 = new Book("book1", 15000, "989955324832", "kdh", 233, Publisher.길벗);
+            em.persist(book1);
+
+            OrderItem orderItem1 = new OrderItem(clothes1, 1);
+            em.persist(orderItem1);
+            OrderItem orderItem2 = new OrderItem(book1, 2);
+            em.persist(orderItem2);
+            Order order = new Order(user);
+            order.addOrderItems(orderItem1);
+            order.addOrderItems(orderItem2);
             em.persist(order);
 
             em.flush();
-
-            Order order1 = em.find(Order.class, order.getId());
-            System.out.println("order1 = " + order1);
 
             tx.commit();
         } catch(Exception e) {

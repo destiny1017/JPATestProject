@@ -8,6 +8,13 @@ import javax.persistence.Id;
 @Entity
 public class User {
 
+    public User() {
+    }
+
+    public User(String userName) {
+        this.userName = userName;
+    }
+
     @Id @GeneratedValue
     @Column(name = "USER_ID")
     private Long id;
