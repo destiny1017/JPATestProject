@@ -28,4 +28,60 @@ public class Size {
     private String hip;
     private String inseam;
     private String sizeNumber;
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
+    public String getChest() {
+        return chest;
+    }
+
+    public void setChest(String chest) {
+        this.chest = chest;
+    }
+
+    public String getLength() {
+        return length;
+    }
+
+    public void setLength(String length) {
+        this.length = length;
+    }
+
+    public String getWaist() {
+        return waist;
+    }
+
+    public void setWaist(String waist) {
+        this.waist = waist;
+    }
+
+    public String getHip() {
+        return hip;
+    }
+
+    public void setHip(String hip) {
+        this.hip = hip;
+    }
+
+    public String getInseam() {
+        return inseam;
+    }
+
+    public void setInseam(String inseam) {
+        this.inseam = inseam;
+    }
+
+    public String getSizeNumber() {
+        return sizeNumber;
+    }
+
+    public void setSizeNumber(String sizeNumber) {
+        this.sizeNumber = sizeNumber;
+    }
 }

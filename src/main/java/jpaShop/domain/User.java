@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class User extends BaseEntity {
 
     public User() {
     }
@@ -36,6 +36,7 @@ public class User {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
 
 
     @Override
