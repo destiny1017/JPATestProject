@@ -1,11 +1,9 @@
 package jpaShop.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
+@DiscriminatorValue("C")
 public class Clothes extends Item {
 
     public Clothes() {

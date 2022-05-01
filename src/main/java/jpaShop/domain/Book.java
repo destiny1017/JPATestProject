@@ -1,8 +1,10 @@
 package jpaShop.domain;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
+@DiscriminatorValue("B")
 public class Book extends Item {
 
     public Book(String name, int price, String isbn, String author, int page, Publisher publisher) {
